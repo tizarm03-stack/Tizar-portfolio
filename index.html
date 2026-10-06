@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tizar Maulana - Telecommunications & Project Specialist</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Vanilla Tilt JS for iOS 3D Card Hover Effect -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <style>
+    /* iOS Custom Styling & Smooth Physics */
+    body {
+      background-color: #0F172A;
+      color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Interactive Mesh Background */
+    .ambient-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      background: radial-gradient(circle at 50% 20%, #1E293B 0%, #0F172A 70%);
+    }
+
+    .glow-orb {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.15) 0%, rgba(30, 41, 59, 0) 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      transition: transform 0.3s ease-out;
+    }
+
+    /* Apple Glassmorphism Card */
+    .ios-card {
+      background: rgba(30, 41, 59, 0.65);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 1.75rem;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .ios-card:hover {
+      border-color: rgba(217, 119, 6, 0.4);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 20px 2px rgba(217, 119, 6, 0.15);
+    }
+
+    /* Interactive Tech Pills */
+    .tech-pill {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .tech-pill:hover {
+      background: rgba(217, 119, 6, 0.2);
+      border-color: rgba(217, 119, 6, 0.5);
+      color: #FDE68A;
+      transform: translateY(-2px);
+    }
+
+    /* Pulse Indicator */
+    .live-pulse {
+      animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    @keyframes pulse-ring {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.15); }
+    }
+  </style>
+</head>
+<body class="selection:bg-amber-500 selection:text-slate-900">
+
+  <!-- Interactive Background Mesh -->
+  <div class="ambient-bg">
+    <div id="interactive-orb" class="glow-orb top-10 left-1/4"></div>
+  </div>
+
+  <!-- iOS Floating Navigation Bar -->
+  <div class="fixed top-5 inset-x-0 z-50 flex justify-center px-4">
+    <header class="bg-slate-900/80 backdrop-blur-2xl border border-white/10 rounded-full px-6 py-3 flex items-center justify-between w-full max-w-4xl shadow-2xl">
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-500 to-amber-300 text-slate-950 font-extrabold flex items-center justify-center text-xs tracking-wider shadow-md">TM</div>
+        <span class="font-bold text-sm tracking-tight text-white">Tizar Maulana</span>
+      </div>
+      <nav class="hidden md:flex space-x-6 text-xs font-medium text-slate-300">
+        <a href="#about" class="hover:text-amber-400 transition">About</a>
+        <a href="#skills-section" class="hover:text-amber-400 transition">Competency</a>
+        <a href="#experience" class="hover:text-amber-400 transition">Experience</a>
+        <a href="#projects" class="hover:text-amber-400 transition">Projects</a>
+        <a href="#education" class="hover:text-amber-400 transition">Education</a>
+      </nav>
+      <a href="https://wa.me/6282319182436" target="_blank" class="bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-amber-500/20">
+        Contact Me
+      </a>
+    </header>
+  </div>
+
+  <!-- Main Container -->
+  <main class="max-w-5xl mx-auto px-4 pt-32 pb-20 space-y-12">
+
+    <!-- Hero / Profile Header Section -->
+    <section id="about" class="space-y-6">
+      
+      <!-- Availability Badge -->
+      <div class="inline-flex items-center space-x-2 bg-slate-800/80 border border-emerald-500/30 text-emerald-400 px-4 py-1.5 rounded-full text-xs font-medium shadow-inner">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 live-pulse"></span>
+        <span>Available for L1 NOC Engineer, Procurement & Pre-Sales Roles</span>
+      </div>
+
+      <!-- Headline -->
+      <div class="space-y-3">
+        <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white">
+          Hello, I'm <span class="bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 bg-clip-text text-transparent">Tizar Maulana</span>
+        </h1>
+        
+        <!-- Outside Short Intro Sentence (Like Reference Image) -->
+        <p class="text-slate-300 text-base md:text-lg font-medium leading-relaxed max-w-3xl">
+          <span class="text-amber-400 font-semibold">Telecommunication & Optical Network Engineer</span> specializing in <span class="text-white font-semibold">L1 NOC Operations, DWDM/FTTH Infrastructure</span>, and <span class="text-white font-semibold">Technical Procurement Administration</span>.
+        </p>
+
+        <!-- Role Badges (Pills) -->
+        <div class="flex flex-wrap gap-2 pt-1">
+          <span class="bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold px-3 py-1 rounded-full">Layer 1 Fiber Optic Specialist</span>
+          <span class="bg-slate-800/90 border border-slate-700 text-slate-300 text-xs font-semibold px-3 py-1 rounded-full">NOC Operations & Incident Triage</span>
+          <span class="bg-slate-800/90 border border-slate-700 text-slate-300 text-xs font-semibold px-3 py-1 rounded-full">Technical Procurement & Pre-Sales</span>
+          <span class="bg-slate-800/90 border border-slate-700 text-slate-300 text-xs font-semibold px-3 py-1 rounded-full">Project Administrator</span>
+        </div>
+      </div>
+
+      <!-- Main Summary Glass Card (No Header Title) -->
+      <div class="ios-card p-6 md:p-8 space-y-4 shadow-2xl" data-tilt data-tilt-max="3" data-tilt-speed="400">
+        <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+          Telecommunication Engineering graduate (PENS, Cum Laude, GPA 3.59) with strong operational experience in 24/7 core network infrastructure monitoring across nationwide submarine and inland backbone fiber lines. Skilled in L1 incident ticket management, alert triage, false-positive verification, and consistently maintaining high SLA standards above 98 percent. Versatile in technical project administration, including BOQ validation, site survey verification, and permit documentation processing. Experienced in cross-functional communication, seamlessly coordinating fault route investigations and project deliverables between internal engineering teams, third-party vendors, tower providers, government authorities, and corporate customers.
+        </p>
+        
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap gap-3 pt-4 border-t border-white/5">
+          <a href="https://wa.me/6282319182436" target="_blank" class="bg-amber-500 hover:bg-amber-400 text-slate-950 px-5 py-2.5 rounded-xl text-xs font-bold flex items-center space-x-2 transition shadow-lg shadow-amber-500/20">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Direct WhatsApp</span>
+          </a>
+          <a href="https://linkedin.com/in/tizarmaulana" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-white px-5 py-2.5 rounded-xl text-xs font-bold flex items-center space-x-2 border border-white/10 transition">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+            <span>LinkedIn Profile</span>
+          </a>
+          <a href="mailto:tizarm03@gmail.com" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-5 py-2.5 rounded-xl text-xs font-bold flex items-center space-x-2 border border-white/10 transition">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>Email Me</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Metrics Highlight Grid -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="ios-card p-5 text-center space-y-1">
+        <div class="text-2xl md:text-3xl font-black text-amber-400">&gt; 98%</div>
+        <div class="text-[11px] text-slate-400 font-medium">NOC SLA Standard</div>
+      </div>
+      <div class="ios-card p-5 text-center space-y-1">
+        <div class="text-2xl md:text-3xl font-black text-white">3.59</div>
+        <div class="text-[11px] text-slate-400 font-medium">GPA Cum Laude (PENS)</div>
+      </div>
+      <div class="ios-card p-5 text-center space-y-1">
+        <div class="text-2xl md:text-3xl font-black text-white">IEEE</div>
+        <div class="text-[11px] text-slate-400 font-medium">First Author Publication</div>
+      </div>
+      <div class="ios-card p-5 text-center space-y-1">
+        <div class="text-2xl md:text-3xl font-black text-amber-400">BNSP Dual</div>
+        <div class="text-[11px] text-slate-400 font-medium">Certified Specialist</div>
+      </div>
+    </section>
+
+    <!-- KEY COMPETENCY & TOOLSET SECTION -->
+    <section id="skills-section" class="space-y-6">
+      <div class="ios-card p-6 md:p-8 space-y-6 bg-gradient-to-br from-slate-900/90 via-slate-900/70 to-slate-800/80 border-amber-500/20 shadow-2xl relative overflow-hidden" data-tilt data-tilt-max="3">
+        
+        <!-- Glow accent inside card -->
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="space-y-2">
+          <div class="inline-flex items-center space-x-2 text-amber-400 text-xs font-bold uppercase tracking-wider bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span>KEY DAILY OPERATIONAL & TECHNICAL ECOSYSTEM</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-extrabold text-white">
+            Core Competencies & Operational Standards
+          </h3>
+          <p class="text-slate-400 text-xs md:text-sm leading-relaxed max-w-3xl">
+            Proficient in rapid network response workflows, L1 incident verification, anomaly detection, optical fiber measurements, technical document validation, and commercial cost calculations.
+          </p>
+        </div>
+
+        <!-- Tech Pills Grid -->
+        <div class="flex flex-wrap gap-2.5 pt-2">
+          <span class="tech-pill px-4 py-2 rounded-xl text-xs font-semibold text-amber-300 border-amber-500/30">Layer 1 Optical Fiber Transmission</span>
+          <span class="tech-pill px-4 py-2 rounded-xl text-xs font-semibold text-amber-300 border-amber-500/30">SLA Response & Reporting (&gt;98%)</span>
+          <span class="tech-pill px-4 py-2 rounded-xl text-xs font-semibold text-slate-200">Fiber Doctor Analysis</span>
+          <span class="tech-pill px-4 py-2 rounded-xl text-xs font-semibold text-slate-200">SOR File & OTDR Trace Reading</span>
+          <span class="tech-pill px-4 py-2 rounded-xl text-xs font-semibold text-slate-200">Alert Triage & Anomaly Detection</span>
+          <span class="tech-pill px-4 py-2 rounded-xl text-xs font-semibold text-slate-200">Incident Ticket Logging & Escalation</span>
+          <span class="tech-pill px-4 py-2 rounded-xl text-xs font-semibold text-slate-200">Submarine & Inland Cable Monitoring</span>
+          <span class="tech-pill px-4 py-2 rounded-xl text-xs font-semibold text-slate-200">NMS & DMS Platforms</span>
+          <span class="tech-pill px-4 py-2 rounded-xl text-xs font-semibold text-slate-200">MikroTik MTCNA / Winbox</span>
+          <span class="tech-pill px-4 py-2 rounded-xl text-xs font-semibold text-slate-200">On-Site Hardware Migration & Console Access</span>
+          <span class="tech-pill px-4 py-2 rounded-xl text-xs font-semibold text-slate-200">OptiSystem & Atoll Network Planning</span>
+          <span class="tech-pill px-4 py-2 rounded-xl text-xs font-semibold text-slate-200">Site Survey & Permit Validation</span>
+          <span class="tech-pill px-4 py-2 rounded-xl text-xs font-semibold text-slate-200">Vendor & Corporate Client Liaison</span>
+          <span class="tech-pill px-4 py-2 rounded-xl text-xs font-semibold text-slate-200">BOQ Calculation & Link Budgeting</span>
+          <span class="tech-pill px-4 py-2 rounded-xl text-xs font-semibold text-slate-200">Cost Estimation & HPP Analysis</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience Section (Newest to Oldest) -->
+    <section id="experience" class="space-y-6">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xl md:text-2xl font-bold text-white flex items-center space-x-2">
+          <i data-lucide="briefcase" class="text-amber-400 w-5 h-5"></i>
+          <span>Professional Work Experience</span>
+        </h3>
+      </div>
+
+      <div class="space-y-4">
+        
+        <!-- Exp 1: NOC Fiber Optic Engineer (Triasmitra) -->
+        <div class="ios-card p-6 space-y-3" data-tilt data-tilt-max="2">
+          <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-white/5 pb-3">
+            <div>
+              <h4 class="font-bold text-base text-white">NOC Fiber Optic Engineer</h4>
+              <span class="text-xs font-semibold text-amber-400">PT Ketrosden Triasmitra | East Jakarta, Indonesia</span>
+            </div>
+            <span class="text-[11px] font-mono text-slate-400 bg-slate-800 px-3 py-1 rounded-full mt-2 md:mt-0 w-max">Apr 2026 – Present</span>
+          </div>
+          <ul class="list-disc list-inside text-xs md:text-sm text-slate-300 space-y-1.5">
+            <li>Maintained 24/7 visibility over nationwide submarine and inland backbone fiber transmission systems (Jayabaya, B3JS, Rising8, Damai routes), conducting alert triage and false-positive alarm verification.</li>
+            <li>Executed first-level troubleshooting, Fiber Doctor analysis, and SOR file trace interpretation to locate network anomalies.</li>
+            <li>Logged and tracked L1 incident tickets, coordinating fault route investigations with internal teams, vendors, and corporate customers with zero unresolved complaints and over 98 percent SLA compliance.</li>
+          </ul>
+        </div>
+
+        <!-- Exp 2: Telco Engineer Support (Indo HR / Maganghub) -->
+        <div class="ios-card p-6 space-y-3" data-tilt data-tilt-max="2">
+          <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-white/5 pb-3">
+            <div>
+              <h4 class="font-bold text-base text-white">Telco Engineer Support (Maganghub Program Awardee, KEMNAKER RI)</h4>
+              <span class="text-xs font-semibold text-amber-400">PT Indo Human Resource | Kuningan, Jakarta, Indonesia</span>
+            </div>
+            <span class="text-[11px] font-mono text-slate-400 bg-slate-800 px-3 py-1 rounded-full mt-2 md:mt-0 w-max">Oct 2025 – Apr 2026</span>
+          </div>
+          <ul class="list-disc list-inside text-xs md:text-sm text-slate-300 space-y-1.5">
+            <li>Processed permit documentation and validated Bill of Quantities (BOQ), technical designs, and site survey documents for a Huawei-managed cellular tower network deployment project (XL Axiata).</li>
+            <li>Coordinated proactively with vendors, tower providers (PT Gihon Telekomunikasi Indonesia, Protelindo), and government authorities to maintain project milestones.</li>
+          </ul>
+        </div>
+
+        <!-- Exp 3: Field Support (PC24 / Verizon) -->
+        <div class="ios-card p-6 space-y-3" data-tilt data-tilt-max="2">
+          <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-white/5 pb-3">
+            <div>
+              <h4 class="font-bold text-base text-white">Field Support Engineer (Third-Party for Verizon International)</h4>
+              <span class="text-xs font-semibold text-amber-400">PT PC24 Telekomunikasi Indonesia | Jakarta, Indonesia</span>
+            </div>
+            <span class="text-[11px] font-mono text-slate-400 bg-slate-800 px-3 py-1 rounded-full mt-2 md:mt-0 w-max">Dec 2024 – Present</span>
+          </div>
+          <ul class="list-disc list-inside text-xs md:text-sm text-slate-300 space-y-1.5">
+            <li>Collaborated directly with international vendor engineering teams (India, Singapore) on enterprise equipment migration projects.</li>
+            <li>Supported on-site material verification, physical hardware rack installations, and initial console configuration checks.</li>
+          </ul>
+        </div>
+
+        <!-- Exp 4: Technical Support Internship (Parsaoran) -->
+        <div class="ios-card p-6 space-y-3" data-tilt data-tilt-max="2">
+          <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-white/5 pb-3">
+            <div>
+              <h4 class="font-bold text-base text-white">Technical Support & Optical Network Design Engineer (Internship)</h4>
+              <span class="text-xs font-semibold text-amber-400">PT Parsaoran Global Datatrans (ION Network / HSP) | East Java, Indonesia</span>
+            </div>
+            <span class="text-[11px] font-mono text-slate-400 bg-slate-800 px-3 py-1 rounded-full mt-2 md:mt-0 w-max">Jan 2024 – Jun 2024</span>
+          </div>
+          <ul class="list-disc list-inside text-xs md:text-sm text-slate-300 space-y-1.5">
+            <li>Supported FTTH installation, optical power budget measurement, and network maintenance, coordinating with NOC teams for fast service restoration.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ALL PROJECTS SECTION (IEEE First, then Kemendikbudristek Grants) -->
+    <section id="projects" class="space-y-6">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xl md:text-2xl font-bold text-white flex items-center space-x-2">
+          <i data-lucide="folder-git-2" class="text-amber-400 w-5 h-5"></i>
+          <span>Featured Research & Innovation Projects</span>
+        </h3>
+      </div>
+
+      <div class="space-y-4">
+        
+        <!-- IEEE Research Paper (FIRST POSITION WITH DIRECT OFFICIAL IEEE LINK) -->
+        <div class="ios-card p-6 space-y-3 border-amber-500/30" data-tilt data-tilt-max="2">
+          <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-white/5 pb-3">
+            <div class="flex items-center space-x-2 text-amber-400 text-xs font-bold">
+              <i data-lucide="book-open" class="w-4 h-4"></i>
+              <span>IEEE International Publication (IES 2025)</span>
+            </div>
+            <!-- DIRECT OFFICIAL IEEE LINK -->
+            <a href="https://ieeexplore.ieee.org/document/11161561" target="_blank" class="inline-flex items-center space-x-1.5 text-xs font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 px-4 py-1.5 rounded-full shadow-md transition transform hover:scale-105 mt-2 md:mt-0">
+              <span>View Paper on IEEE Xplore</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+          <h4 class="font-bold text-base text-white">Enhancing Optical Network Performance: A Dense Wavelength Division Multiplexing-Based Comparative Analysis of Point of Presence in Middle and Last Mile Infrastructure</h4>
+          <p class="text-xs text-slate-400">First Author (with Nihayatus Sa'adah & Prima Kristalina) | Published in 2025 IEEE International Electronics Symposium (IES)</p>
+          <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+            Authored a comprehensive technical research paper evaluating optical parameters (BER, Q-factor, signal attenuation) across Middle-Mile and Last-Mile Point of Presence (PoP) infrastructure using OptiSystem and Atoll simulation tools, delivering optimization recommendations aligned with ITU-T standards.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          <!-- Project 2: 24Net FTTH (PMW Kemendikbudristek) -->
+          <div class="ios-card p-6 space-y-3" data-tilt data-tilt-max="3">
+            <div class="flex items-center space-x-2 text-amber-400 text-xs font-bold">
+              <i data-lucide="award" class="w-4 h-4"></i>
+              <span>24Net FTTH Deployment (PMW Grant)</span>
+            </div>
+            <h4 class="font-bold text-base text-white">Independent FTTH Network at Bale Hinggil Apartment</h4>
+            <p class="text-xs text-slate-400">Team Leader | Entrepreneurial Student Program (PMW) - Kemendikbudristek RI</p>
+            <ul class="list-disc list-inside text-xs text-slate-300 space-y-1 pt-1">
+              <li>Led a student team through full-lifecycle network planning, hardware procurement, physical fiber deployment, and system health dashboard monitoring.</li>
+            </ul>
+          </div>
+
+          <!-- Project 3: PKM (Kemendikbudristek) -->
+          <div class="ios-card p-6 space-y-3" data-tilt data-tilt-max="3">
+            <div class="flex items-center space-x-2 text-amber-400 text-xs font-bold">
+              <i data-lucide="cpu" class="w-4 h-4"></i>
+              <span>Program Kreativitas Mahasiswa (PKM)</span>
+            </div>
+            <h4 class="font-bold text-base text-white">Network Connectivity Innovation Project</h4>
+            <p class="text-xs text-slate-400">Project Creator | Innovation Grant - Kemendikbudristek RI</p>
+            <ul class="list-disc list-inside text-xs text-slate-300 space-y-1 pt-1">
+              <li>Designed and implemented collaborative telecommunications technology solutions aimed at solving real-world infrastructure challenges.</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section id="education" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Education Card -->
+      <div class="ios-card p-6 space-y-4">
+        <h4 class="font-bold text-base text-white flex items-center space-x-2">
+          <i data-lucide="graduation-cap" class="text-amber-400 w-5 h-5"></i>
+          <span>Education Background</span>
+        </h4>
+        <div class="space-y-3 text-xs md:text-sm text-slate-300">
+          <div class="border-b border-white/5 pb-2">
+            <strong class="text-white text-sm block">Politeknik Elektronika Negeri Surabaya (PENS)</strong>
+            <span class="text-slate-400 text-xs block">Bachelor of Applied Science (D4) in Telecommunication Engineering</span>
+            <span class="text-amber-400 text-xs font-semibold block mt-0.5">Graduated July 2025 — GPA 3.59 / 4.00 (Cum Laude)</span>
+          </div>
+          <div>
+            <strong class="text-white text-sm block">SMK Negeri Bantarkalong</strong>
+            <span class="text-slate-400 text-xs block">Vocational Diploma in Computer and Network Engineering (TKJ)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications & Languages Card -->
+      <div class="ios-card p-6 space-y-4">
+        <h4 class="font-bold text-base text-white flex items-center space-x-2">
+          <i data-lucide="shield-check" class="text-amber-400 w-5 h-5"></i>
+          <span>Certifications & Languages</span>
+        </h4>
+        <ul class="space-y-2.5 text-xs md:text-sm text-slate-300">
+          <li class="border-b border-white/5 pb-2">
+            <strong class="text-white block">BNSP Coverage Planning & Computer Operator</strong>
+            <span class="text-slate-400 text-xs">Access Network Coverage Planning (2027) & Computer Operator (2029)</span>
+          </li>
+          <li class="border-b border-white/5 pb-2">
+            <strong class="text-white block">MikroTik Certified Network Associate (MTCNA)</strong>
+            <span class="text-slate-400 text-xs">Routing, Switching & Winbox Fundamentals</span>
+          </li>
+          <li>
+            <strong class="text-white block">Languages & Global Training</strong>
+            <span class="text-slate-400 text-xs block">• English: Professional Working Proficiency (PEPT Score: 477)</span>
+            <span class="text-slate-400 text-xs block">• Chinese Culture & Language: Shandong University of Science and Technology (Honour Student)</span>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-slate-950 py-8 text-center text-xs text-slate-500">
+    <p>© 2026 Tizar Maulana. All rights reserved.</p>
+    <p class="mt-1">Depok, West Java, Indonesia | +62 823-1918-2436 | Tizarm03@gmail.com</p>
+  </footer>
+
+  <!-- Scripts for Lucide Icons & Interactive Cursor Effect -->
+  <script>
+    // Initialize Icons
+    lucide.createIcons();
+
+    // Mouse Follow Glow Effect
+    const orb = document.getElementById('interactive-orb');
+    document.addEventListener('mousemove', (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      orb.style.transform = `translate(${x - 300}px, ${y - 300}px)`;
+    });
+  </script>
+</body>
+</html>
